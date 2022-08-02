@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body {
+  font-family: "Roboto", sans-serif;
+  color: #212121;
+  background-color: #ffffff;
+}
+
+/* Репета рекомендовал */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}/*# sourceMappingURL=main.css.map */
