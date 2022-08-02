@@ -4,6 +4,7 @@ body {
   background-color: #ffffff;
 }
 
+/* Сброс стилей / Reset styles */
 h1,
 h2,
 h3,
@@ -14,13 +15,13 @@ p {
   margin: 0;
 }
 a {
-  text-decoration: none;
+  text-decoration: none; /* Убираем подчеркивание в ссылках  */
 }
 
 ul {
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style: none; /* Убираем маркеры */
 }
 
 img {
