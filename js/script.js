@@ -172,10 +172,34 @@ document.body.style.backgroundColor = color;
 // Будем заполнять места в отеле до тех пор пока текущее количество клиентов не будет равно максимально допустимому.
 
 let clientCounter = 18;
-const maxClients = 25;
+const maxClients = 25; // 25/0; ))))  freezer! ))
 
 while (clientCounter < maxClients) {
   console.log(clientCounter);
   clientCounter += 1;
 }
 //
+
+// let password = "";
+
+// do {
+//   password = prompt("Введите пароль длиннее 4-х символов", "");
+// } while (password.length < 5);
+
+// console.log("Ввели пароль: ", password);
+//
+
+const target = 3;
+let sum = 0;
+
+for (let i = 0; i <= target; i += 1) {
+  sum += i;
+}
+
+console.log(sum);
+//
+for (let i = 0; i <= 20; i += 5) {
+  console.log(i);
+}
+
+console.log("mango" > "Mango");
