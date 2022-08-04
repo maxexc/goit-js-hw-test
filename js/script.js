@@ -168,3 +168,14 @@ console.log(color);
 
 document.body.style.backgroundColor = color;
 // смена цветов / change backgroundcolor
+
+// Будем заполнять места в отеле до тех пор пока текущее количество клиентов не будет равно максимально допустимому.
+
+let clientCounter = 18;
+const maxClients = 25;
+
+while (clientCounter < maxClients) {
+  console.log(clientCounter);
+  clientCounter += 1;
+}
+//
