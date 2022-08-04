@@ -203,3 +203,9 @@ for (let i = 0; i <= 20; i += 5) {
 }
 
 console.log("mango" > "Mango");
+
+//
+// const maxD = 10;
+// for (let i = 0; i < maxD; i += 1) {
+//   console.log(`${maxD} % ${i} = `, maxD % i);
+// }
