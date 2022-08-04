@@ -46,6 +46,7 @@ function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
 let result = makeOrderMessage(2, 100, 50);
 console.log(result); // 30
 
+/////
 let cost = 0;
 const subscription = "pro";
 
@@ -54,8 +55,80 @@ if (subscription === "pro") {
 }
 
 console.log(cost); // 100
+/////
+let costB = 0;
+const subscriptionB = "free";
 
-let quantity = prompt("Введите количество товаров");
-quantity = Number(quantity);
-console.log(quantity);
-console.log(typeof quantity);
+if (subscriptionB === "pro") {
+  costB = 100;
+}
+
+console.log(costB); // 0
+/////
+let costC = 53;
+const subscriptionC = "free";
+
+if (subscriptionC === "pro") {
+  costC = 100;
+} else {
+  costC = 10;
+}
+
+console.log(costC); // 0
+/////
+let costD;
+const subscriptionD = "premium";
+
+if (subscriptionD === "free") {
+  costD = 0;
+} else if (subscriptionD === "pro") {
+  costD = 100;
+} else if (subscriptionD === "premium") {
+  costD = 500;
+} else {
+  console.log("Invalid subscription type");
+}
+
+console.log(costD); // 500
+
+// Тернарный оператор вместо if...else
+
+// let type;
+// const age = 20;
+// if (age >= 18) {
+//   type = "adult";
+// } else {
+//   type = "child";
+// }
+// console.log(type); // "adult"
+
+const age = 20;
+const type = age >= 18 ? "adult" : "child";
+console.log(type); // "adult"
+
+// let quantity = prompt("Введите количество товаров");
+// quantity = Number(quantity);
+// console.log(quantity);
+// console.log(typeof quantity);
+
+let costE;
+const subscriptionE = "premium";
+
+switch (subscriptionE) {
+  case "free":
+    costE = 0;
+    break;
+
+  case "pro":
+    costE = 100;
+    break;
+
+  case "premium":
+    costE = 500;
+    break;
+
+  default:
+    console.log("Invalid subscription type");
+}
+
+console.log(costE); // 500
