@@ -147,3 +147,24 @@ console.log(costE); // 500
 // //
 // const resultA = base ** power;
 // console.log(resultA);
+
+// Генератор случайных чисел / randomizer
+const max = 80;
+const min = 10;
+
+const resultB = Math.round(Math.random() * (max - min) + min);
+console.log(resultB);
+
+// смена цветов / change backgroundcolor
+const colors = ["lightgreen", "teal", "orange", "deeppink", "skyblue"];
+const maxC = colors.length - 1;
+const minC = 0;
+
+const index = Math.round(Math.random() * (maxC - minC) + minC);
+
+const color = colors[index];
+
+console.log(color);
+
+document.body.style.backgroundColor = color;
+// смена цветов / change backgroundcolor
