@@ -132,3 +132,18 @@ switch (subscriptionE) {
 }
 
 console.log(costE); // 500
+
+///Возведение в сетпень
+
+// let base = prompt("Давай число");
+// base = Number(base);
+
+// console.log(base);
+// //
+// let power = prompt("Давай степень");
+// power = Number(power);
+
+// console.log(power);
+// //
+// const resultA = base ** power;
+// console.log(resultA);
