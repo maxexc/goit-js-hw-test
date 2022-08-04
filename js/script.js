@@ -54,3 +54,8 @@ if (subscription === "pro") {
 }
 
 console.log(cost); // 100
+
+let quantity = prompt("Введите количество товаров");
+quantity = Number(quantity);
+console.log(quantity);
+console.log(typeof quantity);
