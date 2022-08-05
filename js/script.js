@@ -253,3 +253,11 @@ isAdult(37);
 //   default:
 //     alert(`Be carefull!`);
 // }
+
+// chat with friend / чат с другом
+const isOnLine = true;
+const isFriend = true;
+const isDnd = false;
+
+const canOpenChat = isOnLine && isFriend && !isDnd;
+console.log(`Можно открыть чат?`, canOpenChat);
