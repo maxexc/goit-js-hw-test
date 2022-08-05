@@ -422,3 +422,82 @@ getShippingCost("chIna");
 getShippingCost("chilE");
 getShippingCost("JamaIca");
 getShippingCost("Sweden");
+
+function getNameLength(name) {
+  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+  console.log(message);
+
+  return message;
+}
+
+getNameLength("Poly");
+getNameLength("Harambe");
+getNameLength("Billy");
+getNameLength("Joe");
+
+function checkForSpam(message) {
+  let result;
+  // Change code below this line
+  result =
+    message.toLowerCase().includes("spam") ||
+    message.toLowerCase().includes("sale"); // Change this line
+  console.log(result);
+
+  // Change code above this line
+  return result;
+}
+
+checkForSpam("Latest technology news");
+checkForSpam("JavaScript weekly newsletter");
+checkForSpam("Get best sale offers now!");
+checkForSpam("Amazing SalE, only tonight!");
+checkForSpam("Trust me, this is not a spam message");
+checkForSpam("Get rid of sPaM emails. Our book in on sale!");
+checkForSpam("[SPAM] How to earn fast money?");
+
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+  if (message.length <= maxLength) {
+    result = message;
+  } else {
+    result = message.slice(0, maxLength) + "...";
+  }
+  console.log(result);
+
+  /// Change code above this line
+  return result;
+}
+
+formatMessage("Curabitur ligula sapien", 16);
+
+function getShippingCost(country) {
+  let message;
+  // Change code below this line
+  switch (country) {
+    case "China":
+      message = `Shipping to ${country} will cost 100 credits`;
+      break;
+    case "Chile":
+      message = `Shipping to ${country} will cost 250 credits`;
+      break;
+    case "Australia":
+      message = `Shipping to ${country} will cost 170 credits`;
+      break;
+    case "Jamaica":
+      message = `Shipping to ${country} will cost 120 credits`;
+      break;
+    default:
+      message = "Sorry, there is no delivery to your country";
+      return message;
+  }
+  console.log(message);
+  // Change code above this line
+}
+
+getShippingCost("Australia");
+getShippingCost("Germany");
+getShippingCost("China");
+getShippingCost("Chile");
+getShippingCost("Jamaica");
+getShippingCost("Sweden");
