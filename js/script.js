@@ -261,3 +261,23 @@ const isDnd = false;
 
 const canOpenChat = isOnLine && isFriend && !isDnd;
 console.log(`Можно открыть чат?`, canOpenChat);
+
+function checkAge(age) {
+  let message;
+
+  if (age >= 18) {
+    // Change this line
+    message = "You are an adult";
+    console.log(message);
+  } else {
+    message = "You are a minor";
+    console.log(message);
+  }
+
+  return message;
+}
+
+checkAge(20);
+checkAge(8);
+checkAge(14);
+checkAge(38);
