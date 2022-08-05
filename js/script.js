@@ -236,3 +236,20 @@ isAdult(20);
 isAdult(14);
 isAdult(8);
 isAdult(37);
+
+// TRAFFIC LIGHT /  Светофор
+// const colorD = prompt(`Enter color`).toLowerCase();
+
+// switch (colorD) {
+//   case `red`:
+//     alert(`STOP!`);
+//     break;
+//   case `yellow`:
+//     alert(`STAND BY`);
+//     break;
+//   case `green`:
+//     alert(`GO! || RUN!`);
+//     break;
+//   default:
+//     alert(`Be carefull!`);
+// }
