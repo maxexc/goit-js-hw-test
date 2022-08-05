@@ -337,3 +337,88 @@ checkStorage(100, 130);
 checkStorage(200, 20);
 checkStorage(200, 150);
 checkStorage(150, 180);
+
+function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
+
+  switch (
+    type // Change this line
+  ) {
+    case "starter": // Change this line
+      price = 0; // Change this line
+      break;
+
+    case "professional": // Change this line
+      price = 20; // Change this line
+      break;
+
+    case "organization": // Change this line
+      price = 50; // Change this line
+      break;
+  }
+  console.log(`${type}, price ${price}`);
+  // Change code above this line
+  return price;
+}
+
+getSubscriptionPrice("professional");
+getSubscriptionPrice("organization");
+getSubscriptionPrice("starter");
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+
+  switch (password) {
+    case null:
+      message = "Canceled by user!";
+      break;
+    case ADMIN_PASSWORD:
+      message = "Welcome!";
+      break;
+    default:
+      message = "Access denied, wrong password!";
+  }
+  console.log(message);
+  // Change code above this line
+  return message;
+}
+
+checkPassword("mangohackzor");
+checkPassword(null);
+checkPassword("polyhax");
+checkPassword("jqueryismyjam");
+
+function getShippingCost(country) {
+  let message;
+  country = country.toLowerCase(); /// !!! STANDARTIZATION! / СТАНДАРТИЗАЦИЯ
+  // Change code below this line
+
+  switch (country) {
+    case "china":
+      message = `Shipping to ${country} will cost 100 credits`;
+      break;
+    case "chile":
+      message = `Shipping to ${country} will cost 250 credits`;
+      break;
+    case "australia":
+      message = `Shipping to ${country} will cost 170 credits`;
+      break;
+    case "jamaica":
+      message = `Shipping to ${country} will cost 120 credits`;
+      break;
+    default:
+      message = "Sorry, there is no delivery to your country";
+  }
+  console.log(message);
+  // Change code above this line
+  return message;
+}
+
+getShippingCost("australia");
+getShippingCost("Germany");
+getShippingCost("chIna");
+getShippingCost("chilE");
+getShippingCost("JamaIca");
+getShippingCost("Sweden");
