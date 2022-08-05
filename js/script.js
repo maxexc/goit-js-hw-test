@@ -304,7 +304,7 @@ function getDiscount(totalSpent) {
   } else if (0 < totalSpent) {
     discount = BASE_DISCOUNT;
     console.log(
-      `Congratulation! You now a BASE partner! Your discount ${discount}, next discount from 5000 totalSpent`
+      `Congratulation! You are now a BASE partner! Your discount is ${discount} , next discount will be from 5000 totalSpent`
     );
   }
 
@@ -318,3 +318,22 @@ getDiscount(8250);
 getDiscount(1300);
 getDiscount(5000);
 getDiscount(20000);
+
+function checkStorage(available, ordered) {
+  // Change code below this line
+  let message;
+  message =
+    ordered > available
+      ? "Not enough goods in stock!"
+      : "The order is accepted, our manager will contact you";
+  console.log(message);
+
+  // Change code above this line
+  return message;
+}
+
+checkStorage(100, 50);
+checkStorage(100, 130);
+checkStorage(200, 20);
+checkStorage(200, 150);
+checkStorage(150, 180);
