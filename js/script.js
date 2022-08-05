@@ -282,6 +282,8 @@ checkAge(8);
 checkAge(14);
 checkAge(38);
 
+// Discounts / Скидки
+
 function getDiscount(totalSpent) {
   const BASE_DISCOUNT = 0;
   const BRONZE_DISCOUNT = 0.02;
