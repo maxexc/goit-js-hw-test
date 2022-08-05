@@ -281,3 +281,38 @@ checkAge(20);
 checkAge(8);
 checkAge(14);
 checkAge(38);
+
+function getDiscount(totalSpent) {
+  const BASE_DISCOUNT = 0;
+  const BRONZE_DISCOUNT = 0.02;
+  const SILVER_DISCOUNT = 0.05;
+  const GOLD_DISCOUNT = 0.1;
+  let discount;
+  // Change code below this line
+
+  if (totalSpent >= 50000) {
+    discount = GOLD_DISCOUNT;
+    console.log(`Congratulation! You have a GOLD discount ${discount}`);
+  } else if (20000 <= totalSpent) {
+    discount = SILVER_DISCOUNT;
+    console.log(`Congratulation! You have a SILVER discount ${discount}`);
+  } else if (5000 <= totalSpent) {
+    discount = BRONZE_DISCOUNT;
+    console.log(`Congratulation! You have a BRONZE discount ${discount}`);
+  } else if (0 < totalSpent) {
+    discount = BASE_DISCOUNT;
+    console.log(
+      `Congratulation! You now a BASE partner! Your discount ${discount}, next discount from 5000 totalSpent`
+    );
+  }
+
+  // Change code above this line
+  return discount;
+}
+
+getDiscount(137000);
+getDiscount(46900);
+getDiscount(8250);
+getDiscount(1300);
+getDiscount(5000);
+getDiscount(20000);
