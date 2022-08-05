@@ -209,3 +209,30 @@ console.log("mango" > "Mango");
 // for (let i = 0; i < maxD; i += 1) {
 //   console.log(`${maxD} % ${i} = `, maxD % i);
 // }
+
+function makeMessage(name, price) {
+  // Change code below this line
+  const message = `You picked ${name}, price per item is ${price} credits`;
+  console.log(message);
+  // Change code above this line
+  return message;
+}
+
+makeMessage("Radar", 6150);
+makeMessage("Scanner", 3500);
+makeMessage("Reactor", 8000);
+makeMessage("Engine", 4070);
+
+function isAdult(age) {
+  // Change code below this line
+  const passed = age >= 18;
+  console.log(passed);
+  // const failed = age < 18;
+  // consol.log(failed);
+  // Change code above this line
+  return passed;
+}
+isAdult(20);
+isAdult(14);
+isAdult(8);
+isAdult(37);
