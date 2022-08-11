@@ -67,3 +67,14 @@ for (const client of clients) {
   // Если они не совпадают то запишем в message сообщение об отсутствии имени
   message = "Клиента с таким именем нету в базе данных!";
 }
+
+const name = "Mango";
+console.log(name.split(""));
+
+const mess = "JavaScript это интересно";
+console.log(mess.split(" "));
+
+const numbers = [1, 2, 3, 8];
+
+numbers.unshift(0.5);
+console.log(numbers); // 0.5
