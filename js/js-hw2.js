@@ -101,11 +101,15 @@ resetBtn.addEventListener("click", function () {
 // console.log(multiply(1, 2, 3, 4, 5));
 
 function multiply(...arf) {
-  // const client = Array.from(arguments);
   return arf;
 }
-
 console.log(multiply(3, 5, 8));
+
+function fn() {
+  const client = Array.from(arguments);
+  return client;
+}
+console.log(fn(7, 8, 5));
 
 // const max = 10;
 // for (let i = 0; i < max; i += 1) {
@@ -199,3 +203,61 @@ console.log(newClients); // ["Monkong", "Singu"]
 // count(1, 5); // countFrom = 1, countTo = 5, step = 1
 // count(2); // countFrom = 2, countTo = 10, step = 1
 // count(); // countFrom = 0, countTo = 10, step = 1
+
+function withdraw(amount, balance) {
+  if (amount === 0) {
+    console.log("Для проведения операции введите сумму больше нуля");
+  } else if (amount > balance) {
+    console.log("Недостаточно средств на счету");
+  } else {
+    console.log("Операция снятия средств проведена успешно");
+  }
+}
+
+withdraw(0, 300); // "Для проведения операции введите сумму больше нуля"
+withdraw(500, 300); // "Недостаточно средств на счету"
+withdraw(100, 300); // "Операция снятия средств проведена успешно"
+
+function checkAge(age) {
+  let message;
+  if (age >= 18) {
+    // Change this line
+    console.log((message = "You are an adult"));
+  }
+  if (age < 18) {
+    console.log((message = "You are a minor"));
+  }
+  return;
+}
+
+checkAge(20);
+checkAge(8);
+
+function checkPassword(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  // Change code below this line
+  let mess;
+
+  if (password === ADMIN_PASSWORD) {
+    console.log("Welcome!");
+    return "Welcome!";
+  }
+  console.log("Access denied, wrong password!");
+  return "Access denied, wrong password!";
+
+  // Change code above this line
+}
+
+checkPassword("mangohackzor");
+checkPassword("polyhax");
+checkPassword("jqueryismyjam");
+
+const fruits = ["apple", "plum", "pear", "orange"];
+
+// Change code below this line
+const firstElement = fruits[0];
+console.log(firstElement);
+const secondElement = fruits[1];
+console.log(secondElement);
+const lastElement = fruits[fruits.length - 1];
+console.log(lastElement);
