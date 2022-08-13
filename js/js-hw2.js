@@ -106,3 +106,33 @@ function multiply(...arf) {
 }
 
 console.log(multiply(3, 5));
+
+// const max = 10;
+// for (let i = 0; i < max; i += 1) {
+//   console.log(`${max} % ${i} = `, max % i);
+// }
+
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (const client of clients) {
+//   console.log(client);
+// }
+
+// const string = "javascript";
+
+// for (const character of string) {
+//   console.log(character);
+// }
+
+const numbers = [1, 3, 14, 18, 4, 7, 29, 6, 34];
+const threshold = 15;
+
+// Для чисел меньше чем порог срабатывает continue, выполнение тела прекращается
+// и управление передаётся на следующую итерацию.
+for (let i = 0; i < numbers.length; i += 1) {
+  if (numbers[i] < threshold) {
+    continue;
+  }
+
+  console.log(`Число больше чем ${threshold}: ${numbers[i]}`); // 18, 29, 34
+}
