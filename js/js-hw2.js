@@ -105,7 +105,7 @@ function multiply(...arf) {
   return arf;
 }
 
-console.log(multiply(3, 5));
+console.log(multiply(3, 5, 8));
 
 // const max = 10;
 // for (let i = 0; i < max; i += 1) {
@@ -136,3 +136,66 @@ for (let i = 0; i < numbers.length; i += 1) {
 
   console.log(`Число больше чем ${threshold}: ${numbers[i]}`); // 18, 29, 34
 }
+
+// // Выносим варианты в массив
+// const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
+// const fruit = "cherry";
+// // Проверяем наличие элемента
+// const hasFruit = redFruits.includes(fruit);
+
+// if (hasFruit) {
+//   console.log(`${fruit} is a red fruit!`);
+// }
+
+const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
+console.log(clients.slice(1, 3)); // ["Ajax", "Poly"]
+
+// // // // // // // // // //
+
+const scores = [1, 2, 3, 4, 5];
+
+// Удаляем три элемента массива, начиная с первого элемента (индекс 0)
+const deletedScores = scores.splice(0, 3);
+
+// Теперь массив scores содержит два элемента
+console.log(scores); // [4, 5]
+
+// А массив deletedScores содержит три удаленных элемента
+console.log(deletedScores); // [1, 2, 3]
+
+const colors = ["red", "green", "blue"];
+
+colors.splice(1, 0, "yellow", "pink");
+console.log(colors); // ["red", "yellow", "pink", "green", "blue"]
+
+//
+const languages = ["C", "C++", "Java", "JavaScript"];
+
+// Заменяем один элемент (с индексом 2) на несколько
+languages.splice(1, 1, "C#", "Swift", "Go");
+console.log(languages); // ["C", "C#", "Swift", "Go", Java", "JavaScript"]
+
+//
+const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+const newClients = ["Monkong", "Singu"];
+
+const allClientsWithOldFirst = oldClients.concat(newClients);
+console.log(allClientsWithOldFirst); // ["Mango", "Ajax", "Poly", "Kiwi", "Monkong", "Singu"]
+
+const allClientsWithNewFirst = newClients.concat(oldClients);
+console.log(allClientsWithNewFirst); // ["Monkong", "Singu", "Mango", "Ajax", "Poly", "Kiwi"]
+
+console.log(oldClients); // ["Mango", "Ajax", "Poly", "Kiwi"]
+console.log(newClients); // ["Monkong", "Singu"]
+
+// function count(countFrom = 0, countTo = 10, step = 1) {
+//   console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
+
+//   for (let i = countFrom; i <= countTo; i += step) {
+//     console.log(i);
+//   }
+// }
+
+// count(1, 5); // countFrom = 1, countTo = 5, step = 1
+// count(2); // countFrom = 2, countTo = 10, step = 1
+// count(); // countFrom = 0, countTo = 10, step = 1
