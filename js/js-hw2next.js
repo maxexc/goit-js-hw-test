@@ -13,3 +13,16 @@ calculateTotal(3);
 calculateTotal(7);
 calculateTotal(18);
 calculateTotal(24);
+
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+  for (const element of order) {
+    element = Number(element);
+    console.log((total += element));
+  }
+
+  // Change code above this line
+  return total;
+}
+calculateTotalPrice([12, 85, 37, 4]);
