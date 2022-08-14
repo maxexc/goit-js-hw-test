@@ -30,3 +30,18 @@ function createArrayOfNumbers(min, max) {
 createArrayOfNumbers(1, 3);
 createArrayOfNumbers(14, 17);
 createArrayOfNumbers(29, 34);
+
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  const message = fruits.includes(fruit);
+  console.log(message);
+
+  return fruits.includes(fruit); // Change this line
+}
+
+checkFruit("plum");
+checkFruit("mandarin");
+checkFruit("pear");
+checkFruit("Pear");
+checkFruit("apple");
