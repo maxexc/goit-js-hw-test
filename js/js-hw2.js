@@ -261,3 +261,36 @@ const secondElement = fruits[1];
 console.log(secondElement);
 const lastElement = fruits[fruits.length - 1];
 console.log(lastElement);
+
+function makeStringFromArray(array, delimeter) {
+  let string;
+  // Change code below this line
+  return console.log((string = array.join(delimeter)));
+
+  // string = (array.join(delimeter));
+  // Change code above this line
+  // return string;
+}
+//  let words;
+//   // Change code below this line
+// words = message.split(delimeter);
+//   // Change code ab 'ove this line
+//   return words;
+
+makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ");
+makeStringFromArray(["M", "a", "n", "g", "o"], "");
+makeStringFromArray(["top", "picks", "for", "you"], "_");
+
+function slugify(title) {
+  // Change code below this line
+  let slug;
+  console.log((slug = title.toLowerCase().split(" ").join("-")));
+  return slug;
+
+  // Change code above this line
+}
+
+slugify("Arrays for begginers");
+slugify("English for developer");
+slugify("Ten secrets of JavaScript");
+slugify("How to become a JUNIOR developer in TWO WEEKS");
