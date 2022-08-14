@@ -14,15 +14,19 @@ calculateTotal(7);
 calculateTotal(18);
 calculateTotal(24);
 
-function calculateTotalPrice(order) {
-  let total = 0;
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
   // Change code below this line
-  for (const element of order) {
-    element = Number(element);
-    console.log((total += element));
+  for (let i = min; i <= max; i += 1) {
+    numbers.push(i);
   }
 
+  console.log(numbers);
+
   // Change code above this line
-  return total;
+  return numbers;
 }
-calculateTotalPrice([12, 85, 37, 4]);
+
+createArrayOfNumbers(1, 3);
+createArrayOfNumbers(14, 17);
+createArrayOfNumbers(29, 34);
