@@ -45,3 +45,41 @@ checkFruit("mandarin");
 checkFruit("pear");
 checkFruit("Pear");
 checkFruit("apple");
+
+function getCommonElements(array1, array2) {
+  // Change code below this line
+  let newArray = [];
+
+  for (let element of array1) {
+    if (array2.includes(element)) {
+      newArray.push(element);
+    }
+  }
+  console.log(newArray);
+  return newArray;
+
+  // Change code above this line
+}
+
+getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+
+function getEvenNumbers(start, end) {
+  // Change code below this line
+  const newArray = [];
+
+  for (let i = start; i <= end; i += 1) {
+    if (i % 2 === 0) {
+      newArray.push(i);
+    }
+  }
+  console.log(newArray);
+  return newArray;
+
+  // Change code above this line
+}
+
+getEvenNumbers(2, 5);
+getEvenNumbers(3, 11);
+getEvenNumbers(6, 12);
+getEvenNumbers(8, 8);
+getEvenNumbers(7, 7);
