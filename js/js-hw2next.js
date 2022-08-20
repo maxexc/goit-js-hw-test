@@ -118,6 +118,9 @@ for (const key of keys) {
   console.log(bookShelf[key]);
 }
 
+const entries = Object.entries(bookShelf);
+console.log(entries);
+
 //
 // const bookShelf = {
 //   books: ["The Last Kingdom"],
@@ -142,3 +145,7 @@ console.log(dog.tails);
 
 console.log(dog.hasOwnProperty("name")); // true
 console.log(dog.hasOwnProperty("tails")); // false
+
+//
+const temps = [14, -4, 25, 8, 11];
+console.log(Math.max(...temps)); // 25
