@@ -83,3 +83,62 @@ getEvenNumbers(3, 11);
 getEvenNumbers(6, 12);
 getEvenNumbers(8, 8);
 getEvenNumbers(7, 7);
+
+//
+const books = "fish";
+
+const bookShelf = {
+  [books]: ["The Last Kingdom"],
+  getBooks() {
+    return this.fish;
+  },
+  addBook(bookName) {
+    this.fish.push(bookName);
+  },
+  removeBook(bookName) {
+    const bookIndex = this.fish.indexOf(bookName);
+    this.fish.splice(bookIndex, 1);
+  },
+};
+
+console.log(bookShelf.getBooks()); // ["The Last Kingdom"]
+bookShelf.addBook("The Mist");
+bookShelf.addBook("Dream Guardian");
+console.log(bookShelf.getBooks()); // ['The Last Kingdom', 'The Mist', 'Dream Guardian']
+bookShelf.removeBook("The Mist");
+console.log(bookShelf.getBooks()); // ['The Last Kingdom', 'Dream Guardian']
+
+const keys = Object.keys(bookShelf);
+console.log(keys);
+
+for (const key of keys) {
+  // Ключ
+  console.log(key);
+  // Значение свойства
+  console.log(bookShelf[key]);
+}
+
+//
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+// bookShelf.getBooks();
+
+//
+const animal = {
+  legs: 4,
+  tails: 2,
+};
+const dog = Object.create(animal);
+dog.name = "Манго";
+
+console.log(dog); // {name: 'Манго'}
+console.log(dog.name); // 'Манго'
+console.log(dog.legs); // 4
+console.log(dog.tails);
+
+console.log(dog.hasOwnProperty("name")); // true
+console.log(dog.hasOwnProperty("tails")); // false
