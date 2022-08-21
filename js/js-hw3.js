@@ -134,3 +134,127 @@ getAllPropValues("name");
 getAllPropValues("quantity");
 getAllPropValues("price");
 getAllPropValues("category");
+
+//
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+
+//   let totalPrice = 0;
+
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       totalPrice = product.price * product.quantity;
+//     }
+//   }
+//   console.log(totalPrice);
+//   return totalPrice;
+//   // Пиши код выше этой строки
+// }
+
+// calculateTotalPrice("Blaster");
+// calculateTotalPrice("Radar");
+// calculateTotalPrice("Droid");
+// calculateTotalPrice("Grip");
+// calculateTotalPrice("Scanner");
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+const {
+  yesterday,
+  today,
+  tomorrow,
+  icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+} = highTemperatures;
+console.log(highTemperatures);
+
+// const yesterday = highTemperatures.yesterday;
+// const today = highTemperatures.today;
+// const tomorrow = highTemperatures.tomorrow;
+// const icon = highTemperatures.icon;
+
+// Change code above this line
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+console.log(meanTemperature);
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// // Change code below this line
+
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+
+const scores = [89, 64, 42, 17, 93, 51, 26];
+// Change code below this line
+const bestScore = Math.max(...scores);
+const worstScore = Math.min(...scores);
+
+console.log("bestScore:", bestScore);
+console.log("worstScore:", worstScore);
+
+//
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// // Change code below this line
+// const allScores = [
+//   ...firstGroupScores,
+//   ...secondGroupScores,
+//   ...thirdGroupScores,
+// ];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// console.log(allScores);
+// console.log(bestScore);
+// console.log(worstScore);
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+  return console.log({ ...{ completed, category, priority }, ...data });
+  // return { ...{ completed, category, priority }, ...data };
+
+  // Change code above this line
+}
+
+makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
+//
+// Change code below this line
+
+function add(...args) {
+  // Change code above this line
+  let totalSum = 0;
+  for (let arg of args) {
+    totalSum += arg;
+  }
+  console.log(totalSum);
+  return totalSum;
+}
+
+add(15, 27);
+add(12, 4, 11, 48);
+add(32, 6, 13, 19, 8);
+add(74, 11, 62, 46, 12, 36);
