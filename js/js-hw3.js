@@ -305,18 +305,36 @@ bookShelf.updateBook("The last kingdom", "Dune");
 // atTheOldToad.addPotion("Power potion");
 
 //
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     // Change code below this line
+
+//     let potionIndex = this.potions.indexOf(potionName);
+//     this.potions.splice(potionIndex, 1);
+//     return console.log(this.potions);
+
+//     // Change code above this line
+//   },
+// };
+
+// atTheOldToad.removePotion("Dragon breath");
+// atTheOldToad.removePotion("Speed potion");
+
+//
 const atTheOldToad = {
   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  removePotion(potionName) {
+  updatePotionName(oldName, newName) {
     // Change code below this line
 
-    let potionIndex = this.potions.indexOf(potionName);
-    this.potions.splice(potionIndex, 1);
+    let potionIndex = this.potions.indexOf(oldName);
+    this.potions.splice(potionIndex, 1, newName);
+
     return console.log(this.potions);
 
     // Change code above this line
   },
 };
 
-atTheOldToad.removePotion("Dragon breath");
-atTheOldToad.removePotion("Speed potion");
+atTheOldToad.updatePotionName("Dragon breath", "Polymorth");
+atTheOldToad.updatePotionName("Stone skin", "Invisibility");
