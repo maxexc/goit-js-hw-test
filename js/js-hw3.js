@@ -258,3 +258,48 @@ add(15, 27);
 add(12, 4, 11, 48);
 add(32, 6, 13, 19, 8);
 add(74, 11, 62, 46, 12, 36);
+
+//
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+
+    let bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
+    // return this.books;
+    return console.log(this.books);
+
+    // Change code above this line
+  },
+};
+
+// console.log(bookShelf.books);
+bookShelf.updateBook("The last kingdom", "Dune");
+
+//
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  // Change code above this line
+};
+
+// console.log(atTheOldToad.potions);
+
+//
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   addPotion(potionName) {
+//     // Change code below this line
+//     this.potions.push(potionName);
+//     return console.log(this.potions);
+
+//     // Change code above this line
+//   },
+// };
+
+// atTheOldToad.addPotion("Invisibility");
+// atTheOldToad.addPotion("Power potion");
