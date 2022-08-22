@@ -278,16 +278,16 @@ const bookShelf = {
 bookShelf.updateBook("The last kingdom", "Dune");
 
 //
-const atTheOldToad = {
-  potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  // Change code below this line
-  getPotions() {
-    return this.potions;
-  },
-  // Change code above this line
-};
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   // Change code above this line
+// };
 
-// console.log(atTheOldToad.potions);
+// // console.log(atTheOldToad.potions);
 
 //
 // const atTheOldToad = {
@@ -303,3 +303,20 @@ const atTheOldToad = {
 
 // atTheOldToad.addPotion("Invisibility");
 // atTheOldToad.addPotion("Power potion");
+
+//
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    // Change code below this line
+
+    let potionIndex = this.potions.indexOf(potionName);
+    this.potions.splice(potionIndex, 1);
+    return console.log(this.potions);
+
+    // Change code above this line
+  },
+};
+
+atTheOldToad.removePotion("Dragon breath");
+atTheOldToad.removePotion("Speed potion");
