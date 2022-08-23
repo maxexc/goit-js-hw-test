@@ -397,4 +397,4 @@ atTheOldToad.removePotion("Invisibility");
 atTheOldToad.updatePotionName("Power potion", "Dragon Power potion");
 console.log(atTheOldToad.potions);
 atTheOldToad.updatePotionName("Invisibility", "Stealth potion");
-console.log(atTheOldToad.potions);
+console.table(atTheOldToad.potions); // table -It`s cool)))
