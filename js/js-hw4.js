@@ -27,3 +27,33 @@ const temps = [18, 14, 12, 27, 29, 24];
 console.log(Math.max(1, 4, 27, 5, 9));
 console.log(Math.min(temps));
 console.log(Math.min(...temps));
+
+//  Репета пример
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  remove(productName) {
+    for (const item of this.items) {
+      console.log(item);
+      if (productName === item.name) {
+        console.log("нашли такой продукт", productName);
+      }
+    }
+  },
+  claer() {},
+  countTotalPrice() {},
+};
+
+console.table(cart.items);
+
+cart.add({ name: "apple", price: 50 });
+cart.add({ name: "grape", price: 60 });
+cart.add({ name: "lemon", price: 60 });
+cart.add({ name: "strawberry", price: 110 });
+
+console.table(cart.getItems());
