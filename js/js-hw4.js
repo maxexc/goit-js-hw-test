@@ -57,3 +57,33 @@ cart.add({ name: "lemon", price: 60 });
 cart.add({ name: "strawberry", price: 110 });
 
 console.table(cart.getItems());
+
+//
+const students = [
+  { name: "Манго", score: 83 },
+  { name: "Поли", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Киви", score: 94 },
+  { name: "Хьюстон", score: 64 },
+];
+
+const names = students.map((student) => student.name);
+console.log(names); // ['Манго', 'Поли', 'Аякс', 'Киви', 'Хьюстон']
+
+//
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+
+    let bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
+    return this.books;
+    // return console.log(this.books);
+
+    // Change code above this line
+  },
+};
+// console.log(bookShelf.books);
+// bookShelf.updateBook("The last kingdom", "Dune");
+console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
