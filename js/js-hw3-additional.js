@@ -122,6 +122,7 @@ const cart = {
   increaseQuantity(productName) {
     for (const item of this.items) {
       if (item.name === productName) {
+        console.log("добавили такой продукт", productName);
         item.quantity += 1;
       }
       // else items.slice(items.indexOf("item.name"), 1);
