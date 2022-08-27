@@ -312,3 +312,22 @@ getCommonElements([1, 2, 3], [2, 1, 17, 19]);
 getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
 getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
 getCommonElements([1, 2, 3], [10, 20, 30]);
+
+// even function / четная функция
+function changeEven(numbers, value) {
+  const newArray = [];
+
+  numbers.forEach((element) => {
+    if (element % 2 === 0) {
+      newArray.push(element + value);
+    } else if (!element % 2 === 0) {
+      newArray.push(element);
+    }
+  });
+
+  console.log("четная функция", newArray);
+  return newArray;
+  // Change code above this line
+}
+
+changeEven([2, 8, 3, 7, 4, 6], 10);
