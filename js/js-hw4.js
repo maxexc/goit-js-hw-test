@@ -137,7 +137,7 @@ const filter = function (array, test) {
   const filteredArray = [];
 
   for (const el of array) {
-    console.log(el);
+    // console.log(el);
     const passed = test(el);
 
     if (passed) {
@@ -174,3 +174,141 @@ const getFruitsWithQuantity = function (fruit) {
 
 const r3 = filter(fruits, getFruitsWithQuantity);
 console.table(r3);
+
+// hw4_4
+// const pizzaPalace = {
+//   pizzas: ["Ultracheese", "Smoked", "Four meats"],
+//   order(pizzaName, makePizza, onOrderError) {
+//     for (const pizza of this.pizzas) {
+//       if (pizza === pizzaName) {
+//         return console.log(makePizza(pizzaName));
+//       } else return console.log(onOrderError(pizzaName));
+//     }
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(pizzaName) {
+//   return `There is no pizza with a name ${pizzaName} in the assortment.`;
+// }
+
+// // Method calls with callbacks
+// pizzaPalace.order("Smoked", makePizza, onOrderError);
+// pizzaPalace.order("Four meats", makePizza, onOrderError);
+// pizzaPalace.order("Big Mike", makePizza, onOrderError);
+// pizzaPalace.order("Vienna", makePizza, onOrderError);
+// // //
+
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName, onSuccess, onError) {
+    for (const pizza of this.pizzas) {
+      if (pizza === pizzaName) {
+        console.log(onSuccess(pizzaName));
+        return onSuccess(pizzaName);
+      }
+    }
+
+    console.log(onError(pizzaName));
+    return onError(pizzaName);
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(pizzaName) {
+  return `Error! There is no pizza with a name ${pizzaName} in the assortment.`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError);
+
+// //
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+
+  orderedItems.forEach(function (item) {
+    totalPrice += item;
+  });
+
+  // for (let i = 0; i < orderedItems.length; i += 1) {
+  //   totalPrice += orderedItems[i];
+  // }
+
+  // Change code above this line
+  return console.log(totalPrice);
+}
+
+calculateTotalPrice([12, 85, 37, 4]);
+calculateTotalPrice([164, 48, 291]);
+calculateTotalPrice([412, 371, 94, 63, 176]);
+
+//
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+
+  numbers.forEach(function (item) {
+    if (item > value) {
+      filteredNumbers.push(item);
+    }
+  });
+
+  // for (let i = 0; i < numbers.length; i += 1) {
+  //   if (numbers[i] > value) {
+  //     filteredNumbers.push(numbers[i]);
+  //   }
+  // }
+
+  // Change code above this line
+  console.log(filteredNumbers);
+  return filteredNumbers;
+}
+
+filterArray([1, 2, 3, 4, 5], 3);
+filterArray([1, 2, 3, 4, 5], 4);
+filterArray([1, 2, 3, 4, 5], 5);
+filterArray([12, 24, 8, 41, 76], 38);
+filterArray([12, 24, 8, 41, 76], 20);
+
+//
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Change code below this line
+  firstArray.forEach(function (firstElement) {
+    if (secondArray.includes(firstElement)) {
+      commonElements.push(firstElement);
+    }
+  });
+
+  // for (let i = 0; i < firstArray.length; i += 1) {
+  //   if (secondArray.includes(firstArray[i])) {
+  //     commonElements.push(firstArray[i]);
+  //   }
+  // }
+
+  console.log(commonElements);
+  return commonElements;
+  // Change code above this line
+}
+
+getCommonElements([1, 2, 3], [2, 4]);
+getCommonElements([1, 2, 3], [2, 1, 17, 19]);
+getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]);
+getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]);
+getCommonElements([1, 2, 3], [10, 20, 30]);
