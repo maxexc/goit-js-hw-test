@@ -331,3 +331,251 @@ function changeEven(numbers, value) {
 }
 
 changeEven([2, 8, 3, 7, 4, 6], 10);
+
+// // // //
+const studentss = [
+  { name: "Манго", courses: ["математика", "физика"] },
+  { name: "Поли", courses: ["информатика", "математика"] },
+  { name: "Киви", courses: ["физика", "биология"] },
+];
+
+const allCourses = studentss.flatMap((student) => student.courses);
+// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+console.log(allCourses);
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+);
+console.log(uniqueCourses);
+
+//
+const LOW_SCORE = 50;
+const HIGH_SCORE = 80;
+const students = [
+  { name: "Манго", score: 83 },
+  { name: "Поли", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Киви", score: 94 },
+  { name: "Хьюстон", score: 64 },
+];
+
+const best = students.filter((student) => student.score >= HIGH_SCORE);
+console.log("best students");
+console.table(best); // Массив объектов с именами Манго и Киви
+
+const worst = students.filter((student) => student.score < LOW_SCORE);
+console.log("worst students");
+console.table(worst); // Массив с одним объектом Аякс
+
+// В коллбек-функции удобно деструктуризировать свойства объекта
+const average = students.filter(
+  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+);
+console.log("average students");
+console.table(average); // Массив объектов с именами Поли и Хьюстон
+//
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+colorPickerOptions.find((option) => option.label === "blue"); // { label: 'blue', color: '#2196F3' }
+colorPickerOptions.find((option) => option.label === "pink"); // { label: 'pink', color: '#E91E63' }
+colorPickerOptions.findIndex((option) => option.label === "pink"); // 3
+colorPickerOptions.find((option) => option.label === "white"); // undefined
+console.log(colorPickerOptions.find((option) => option.label === "blue"));
+console.log(colorPickerOptions.findIndex((option) => option.label === "pink"));
+
+console.log("Метод value");
+// Все элементы больше либо равны нулю? - да
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+console.log([1, 2, 3, 4, 5].every((value) => value >= 0));
+// Все элементы больше либо равны нулю? - нет
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+console.log([1, 2, 3, -10, 4, 5].every((value) => value >= 0));
+
+console.log("Метод some");
+// Есть хотя бы один элемент больше либо равный нулю? - да
+[1, 2, 3, 4, 5].some((value) => value >= 0); // true
+console.log([1, 2, 3, 4, 5].some((value) => value >= 0));
+// Есть хотя бы один элемент больше либо равный нулю? - да
+[-7, -20, 3, -10, -14].some((value) => value >= 0); // true
+console.log([-7, -20, 3, -10, -14].some((value) => value >= 0));
+// Есть хотя бы один элемент меньше нуля? - нет
+[1, 2, 3, 4, 5].some((value) => value < 0); // false
+// Есть хотя бы один элемент меньше нуля? - да
+[1, 2, 3, -10, 4, 5].some((value) => value < 0); // true
+
+//
+const fruitss = [
+  { name: "apples", amount: 100 },
+  { name: "bananas", amount: 0 },
+  { name: "grapes", amount: 50 },
+];
+
+// every вернет true только если всех фруктов будет больше чем 0 штук
+const allAvailable = fruitss.every((fruit) => fruit.amount > 0); // false
+console.log("Массив объектов", allAvailable);
+// some вернет true если хотябы одного фрукта будет больше чем 0 штук
+const anyAvailable = fruitss.some((fruitss) => fruitss.amount > 0); // true
+console.log("Массив объектов", anyAvailable);
+
+//
+const sstudents = [
+  { name: "Манго", score: 83 },
+  { name: "Поли", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Киви", score: 94 },
+  { name: "Хьюстон", score: 64 },
+];
+
+// Название аккумулятора может быть произвольным, это просто параметр функции
+
+const totalNames = sstudents.reduce((allNames, student) => {
+  allNames.push(student.name);
+  return allNames;
+}, []);
+
+console.log(totalNames);
+// const averageScore = totalScore / sstudents.length;
+
+//
+// Продвинутый reduce
+console.log("Продвинутый reduce");
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+// Пройдем по всем элементам коллекции и прибавим значения свойства likes
+// к аккумулятору, начальное значение которого укажем 0.
+const likes = tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+
+console.log(likes); // 32
+
+// Наверное подсчет лайков не одиночная операция, поэтому напишем функцию
+// для подсчета лайков из коллекции
+const countLikes = (tweets) => {
+  return tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+};
+
+console.log(countLikes(tweets)); // 32
+
+// Пройдем по всем элементам коллекции и добавим значения свойства tags
+// к аккумулятору, начальное значение которого укажем пустым массивом [].
+// На каждой итерации пушим в аккумулятор все элементы tweet.tags и возвращаем его.
+// const tags = tweets.reduce((allTags, tweet) => {
+//   allTags.push(...tweet.tags);
+
+//   return allTags;
+// }, []);
+
+// console.log(tags);
+
+// Наверное сбор тегов не одиночная операция, поэтому напишем функцию
+// для сбора тегов из коллекции
+// const getTags = (tweets) =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+
+// console.log(getTags(tweets));
+
+const getTags = tweets.reduce((allTags, tweet) => {
+  allTags.push(...tweet.tags);
+
+  return allTags;
+}, []);
+
+console.log(getTags);
+
+// Вынесем callback-функцию отдельно, а в reducе передадим ссылку на нее.
+// Это стандартная практика если callback-функция довольно большая.
+
+// Если в объекте-аккумуляторе acc нету своего свойства с ключем tag,
+// то создаем его и записывает ему значение 0.
+// В противном случае увеличиваем значение на 1.
+const tags = getTags;
+
+const getTagStats = (acc, tag) => {
+  if (!acc.hasOwnProperty(tag)) {
+    acc[tag] = 0;
+  }
+
+  acc[tag] += 1;
+
+  return acc;
+};
+
+// Начальное значение аккумулятора это пустой объект {}
+const countTags = (tags) => tags.reduce(getTagStats, {});
+
+const tagCount = countTags(tags);
+console.log(tagCount);
+
+// Метод sort()
+console.log("Метод sort()");
+
+const scores = [61, 19, 74, 35, 92, 56];
+scores.sort();
+console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+const scores2 = [27, 2, 41, 4, 7, 3, 75];
+scores.sort();
+console.log(scores2); // [2, 27, 3, 4, 41, 7, 75]
+
+//
+const scores3 = [27, 2, 41, 4, 7, 3, 75];
+const ascendingScores = [...scores3].sort((a, b) => a - b);
+console.log(scores3);
+console.log("Возростание", ascendingScores); // 2, 27, 3, 4, 41, 7, 75]
+
+const scores4 = [61, 19, 74, 35, 92, 56];
+const descendingScores = [...scores4].sort((a, b) => b - a);
+console.log("Убывание", descendingScores); // [92, 74, 61, 56, 35, 19]
+//
+
+//
+const students2 = ["Вика", "Андрей", "Олег", "Юля", "Борис", "Катя"];
+
+const inAlphabetOrder = [...students2].sort((a, b) => a.localeCompare(b));
+console.log("inAlphabet", inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
+
+const inReversedOrder = [...students2].sort((a, b) => b.localeCompare(a));
+console.log("Reverse", inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']
+//
+
+//
+const students3 = [
+  { name: "Манго", score: 83, courses: ["математика", "физика"] },
+  { name: "Поли", score: 59, courses: ["информатика", "математика"] },
+  { name: "Аякс", score: 37, courses: ["физика", "биология"] },
+  { name: "Киви", score: 94, courses: ["литература", "информатика"] },
+];
+console.table(students3);
+
+const sortedByAscendingScore = [...students3].sort((a, b) => a.score - b.score);
+console.log(sortedByAscendingScore);
+const names = sortedByAscendingScore.map((student) => student.name);
+
+console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// const names = [...students3]
+//   .sort((a, b) => a.score - b.score)
+//   .map((student) => student.name);
+яИМ;
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+const uniqueSortedCourses = students3
+  .flatMap((student) => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
