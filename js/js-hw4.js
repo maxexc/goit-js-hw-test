@@ -570,7 +570,6 @@ console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
 // const names = [...students3]
 //   .sort((a, b) => a.score - b.score)
 //   .map((student) => student.name);
-яИМ;
 // console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
 
 const uniqueSortedCourses = students3
