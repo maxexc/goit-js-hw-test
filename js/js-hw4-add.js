@@ -142,13 +142,13 @@ console.log(getFriends);
 
 // Change code above this line
 
-const players = {
+const players1 = {
   mango: 1270,
   poly: 468,
   ajax: 710,
   kiwi: 244,
 };
-const playtimes = Object.values(players); // [1270, 468, 710, 244]
+const playtimes = Object.values(players1); // [1270, 468, 710, 244]
 console.log("playtimes:", playtimes);
 // Change code below this line
 
@@ -217,3 +217,23 @@ const getSortedFriends = (users3) =>
     .flatMap((user) => user.friends)
     .filter((course, index, array) => array.indexOf(course) === index)
     .sort((a, b) => a.friends.localeCompare(b.friends));
+
+//
+// examples Repeta
+
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, point: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, point: 92, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, point: 48, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, point: 71, online: false },
+  { id: "player-5", name: "Chelsy", timePlayed: 80, point: 48, online: true },
+];
+
+const doubledNums = numbers.map(function (number) {
+  console.log(number);
+
+  return number * 2;
+});
+
+console.log("numbers", numbers);
+console.log("doubledNums", doubledNums);
