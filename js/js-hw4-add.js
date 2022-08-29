@@ -141,3 +141,79 @@ const getFriends = (users) =>
 console.log(getFriends);
 
 // Change code above this line
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244,
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+console.log("playtimes:", playtimes);
+// Change code below this line
+
+const totalPlayTime = playtimes.reduce((previousValue, time) => {
+  return previousValue + time;
+}, 0);
+console.log(totalPlayTime);
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+console.log(averagePlayTime);
+
+//
+const players2 = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players2.reduce((total, player) => {
+  return total + player.playtime / player.gamesPlayed;
+}, 0);
+
+console.log("Total:", totalAveragePlaytimePerGame);
+
+//
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .map((book) => book.author)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(names);
+
+//
+// Change code below this line
+const getSortedFriends = (users3) =>
+  [...users3]
+    .flatMap((user) => user.friends)
+    .filter((course, index, array) => array.indexOf(course) === index)
+    .sort((a, b) => a.friends.localeCompare(b.friends));
