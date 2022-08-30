@@ -78,6 +78,9 @@ console.table("anyHardcorePlayers:", anyHardcorePlayers);
 //
 const numbers = [5, 10, 15, 20, 25];
 
+// const total = numbers.reduce((acc, number) => acc + number, 0);
+// console.log(total);
+
 const total = numbers.reduce((acc, number) => {
   console.log("number:", number);
   console.log("acc:", acc);
@@ -90,3 +93,36 @@ console.log(total);
 // accumulator = 15 -> number = 5 -> return 15 + 15
 // accumulator = 30 -> number = 5 -> return 30 + 20
 // accumulator = 50 -> number = 5 -> return 50 + 25
+
+const petya = {
+  username: "Petya",
+  showThis() {
+    console.log(this);
+  },
+  showName() {
+    console.log(this.username);
+  },
+};
+
+petya.showThis(); // {username: "Petya", showThis: ƒ, showName: ƒ}
+petya.showName(); // 'Petya'
+
+//
+function showThis() {
+  console.log("this in showThis: ", this);
+}
+
+// Вызываем в глобальном контексте
+showThis(); // this in showThis: Window
+
+const user = {
+  username: "Mango",
+};
+// Записываем ссылку на функцию в свойство объекта
+// Обратите внимание, что это не вызов - нет ()
+user.showContext = showThis;
+
+// Вызываем функцию в контексте объекта
+// this будет указывать на текущий объект, в контексте
+// которого осуществляется вызов, а не на глобальный объект.
+user.showContext(); // this in showThis: {username: "Mango", showContext: ƒ}
