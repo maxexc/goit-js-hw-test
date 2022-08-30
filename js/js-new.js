@@ -1,15 +1,15 @@
 // examples Repeta
 
-const numbers = [5, 10, 15, 20, 25];
+const numbers2 = [5, 10, 15, 20, 25];
 
-const doubledNums = numbers.map((number) => {
+const doubledNums = numbers2.map((number) => {
   console.log(number);
 
   return number * 2;
 });
 
-console.log("numbers", numbers);
-console.log("doubledNums", doubledNums);
+console.log("numbers2:", numbers2);
+console.log("doubledNums:", doubledNums);
 
 //
 const players = [
@@ -50,3 +50,43 @@ const updatedPlayers = players.map((player) => {
 
 console.table(updatedPlayers);
 console.log(updatedPlayers);
+
+//
+const onlinePlayers = players.filter((player) => player.online);
+// console.table(onlinePlayers);
+
+const offlinePlayers = players.filter((player) => !player.online);
+// console.table(offlinePlayers);
+
+const hardcorePlayers = players.filter((player) => player.timePlayed > 250);
+// console.table(hardcorePlayers);
+
+const findPlayerById = (allPlayer, playerId) =>
+  allPlayer.find(({ id }) => id === playerId);
+// console.log(findPlayerById(players, "player-1"));
+// console.log(findPlayerById(players, "player-3"));
+
+// const isAllOnline = players.every((player) => player.online);
+// console.table("isAllOnline:", isAllOnline);
+
+const isAnyOnline = players.some((player) => player.online);
+console.table("isAnyOnline:", isAnyOnline);
+
+const anyHardcorePlayers = players.some((player) => player.timePlayed > 400);
+console.table("anyHardcorePlayers:", anyHardcorePlayers);
+
+//
+const numbers = [5, 10, 15, 20, 25];
+
+const total = numbers.reduce((acc, number) => {
+  console.log("number:", number);
+  console.log("acc:", acc);
+  return acc + number;
+}, 0);
+console.log(total);
+
+// accumulator = 0 -> number = 5 -> return 0 + 5
+// accumulator = 5 -> number = 5 -> return 5 + 10
+// accumulator = 15 -> number = 5 -> return 15 + 15
+// accumulator = 30 -> number = 5 -> return 30 + 20
+// accumulator = 50 -> number = 5 -> return 50 + 25
