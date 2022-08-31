@@ -80,3 +80,7 @@ console.log(
 );
 
 //
+class Car {}
+
+// test = new Car();
+console.log(new Car());
