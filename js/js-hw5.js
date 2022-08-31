@@ -265,3 +265,99 @@ console.log(audi.price); // 49000
 
 audi.price = 51000;
 console.log(audi.price); // 49000
+
+//
+class Car6 {
+  static #MAX_PRICE = 50000;
+  static checkPrice(price) {
+    if (price > Car6.#MAX_PRICE) {
+      return "Error! Price exceeds the maximum";
+    }
+    return "Success! Price is within acceptable limits";
+  }
+  // Change code below this line
+
+  // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
+}
+
+const audi2 = new Car6({ price: 36000 });
+const bmw2 = new Car6({ price: 64000 });
+
+console.log(Car6.checkPrice(audi2.price)); // "Success! Price is within acceptable limits"
+console.log(Car6.checkPrice(bmw2.price)); // "Error! Price exceeds the maximum"
+
+//
+class User {
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+// Change code below this line
+
+class Admin extends User {
+  static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
+}
+
+console.log(Admin.AccessLevel.BASIC);
+
+//
+class User7 {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin5 extends User7 {
+  // Change code below this line
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  constructor({ email, accessLevel, blacklistedEmails }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    this.blacklistedEmails = [];
+  }
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+  isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email);
+  }
+
+  // Change code above this line
+}
+
+const mango = new Admin5({
+  email: "mango@mail.com",
+  accessLevel: Admin5.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
