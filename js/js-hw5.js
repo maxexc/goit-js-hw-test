@@ -194,3 +194,40 @@ storage4.addItem("Droid");
 console.log(storage4.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage4.removeItem("Prolonger");
 console.log(storage4.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+//
+class StringBuilder2 {
+  // Change code below this line
+  #value;
+
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+
+// Change code above this line
+const builder2 = new StringBuilder2(".");
+console.log(builder2.getValue()); // "."
+builder2.padStart("^");
+console.log(builder2.getValue()); // "^."
+builder2.padEnd("^");
+console.log(builder2.getValue()); // "^.^"
+builder2.padBoth("=");
+console.log(builder2.getValue()); // "=^.^="
