@@ -84,3 +84,113 @@ class Car {}
 
 // test = new Car();
 console.log(new Car());
+
+//
+class Car2 {
+  // Change code below this line
+
+  constructor(brand, model, price) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+
+  // Change code above this line
+}
+
+const result = new Car2("Audi", "Q3", 36000);
+console.log(result);
+
+class Car3 {
+  // Change code below this line
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  // Change code above this line
+}
+const result2 = new Car3({ brand: "Nissan", model: "Murano", price: 31700 });
+console.log(result2);
+
+//
+class StringBuilder {
+  constructor(initialValue) {
+    this.value = initialValue;
+  }
+  getValue() {
+    return this.value;
+  }
+  padEnd(str) {
+    this.value += str;
+  }
+  padStart(str) {
+    this.value = str + this.value;
+  }
+  padBoth(str) {
+    this.value = str + this.value + str;
+  }
+}
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+
+//
+class Car4 {
+  // Change code below this line
+  #brand;
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  getBrand() {
+    return this.#brand;
+  }
+  changeBrand(newBrand) {
+    this.#brand = newBrand;
+  }
+
+  // Change code above this line
+}
+
+const result3 = new Car4({ brand: "Nissan", model: "Murano", price: 31700 });
+console.log(result3);
+
+//
+class Storage4 {
+  // Change code below this line
+  #items;
+
+  constructor(items) {
+    this.#items = items;
+  }
+
+  getItems() {
+    return this.#items;
+  }
+
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter((item) => item !== itemToRemove);
+  }
+}
+
+// Change code above this line
+const storage4 = new Storage4(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage4.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage4.addItem("Droid");
+console.log(storage4.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage4.removeItem("Prolonger");
+console.log(storage4.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
