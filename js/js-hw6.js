@@ -11,4 +11,4 @@ console.dir(document);
 const navItemEl = document.querySelector("li");
 console.dir(navItemEl);
 
-//
+// //
