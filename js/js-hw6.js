@@ -2,7 +2,7 @@
 
 // console.log(document);
 
-console.dir(document);
+// console.dir(document);
 
 // const navRef;
 // const navEl = document.querySelector("ul");
