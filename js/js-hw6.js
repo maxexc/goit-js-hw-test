@@ -12,9 +12,9 @@
 const navItemEl = document.querySelector(".site-nav__item"); // id=132 ("#132");
 console.log(navItemEl);
 
-// const navLinksEl = document.querySelector(".site-nav__link");
-// const navLinksEl = document.querySelectorAll(".site-nav__link");
-const navLinksEl = document.querySelectorAll(".site-nav__link121");
+// const navLinksEl = document.querySelector(".site-nav__link3232");  // null
+const navLinksEl = document.querySelectorAll(".site-nav__link");
+// const navLinksEl = document.querySelectorAll(".site-nav__link121"); // []
 console.log("navLinksEl", navLinksEl);
 
 // //
