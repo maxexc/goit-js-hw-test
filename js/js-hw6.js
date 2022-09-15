@@ -76,6 +76,33 @@ console.log(button);
 const input = document.querySelector(".input");
 input.addEventListener("input", handlerInput);
 
-function handlerInput(evt) {
-  console.dir(evt.currentTarget.value);
+function handlerInput(evnt) {
+  console.dir(evnt.currentTarget.value);
 }
+
+const form = document.querySelector(".form");
+// const input = document.querySelector('.input');
+form.addEventListener("submit", onSubmit);
+
+function onSubmit(evt) {
+  evt.preventDefault();
+  console.dir(evt.currentTarget);
+  console.dir(evt.currentTarget.email);
+  console.log(input.value);
+}
+
+// const add = document.addEventListener("click", pushClick);
+
+// function onBoard(evt) {
+//   if (evt.code === "Escape") {
+//     const box = document.querySelector(".box");
+//     box.remove();
+//     document.removeEventListener("keyup", onBoard);
+//   }
+//   return;
+// }
+
+// function pushClick() {
+//   document.body.insertAdjacentHTML("beforeend", '<div class="box"></div>');
+//   document.addEventListener("keyup", onBoard);
+// }
