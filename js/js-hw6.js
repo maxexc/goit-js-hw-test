@@ -47,3 +47,35 @@ console.log(imageEl.src);
 console.log("imageEl.hasAttribute_src:", imageEl.hasAttribute("src"));
 console.log("imageEl.hasAttribute_src5454:", imageEl.hasAttribute("src5454"));
 // //
+
+const actions = document.querySelectorAll(".js-actions button");
+console.log(actions[0].dataset);
+console.log(actions[0].dataset.action);
+console.log(actions[1].dataset.action);
+
+console.log(actions[1].getAttribute("data-action"));
+
+// //
+const button = document.querySelector(".hello");
+const item = document.querySelector(".item");
+let value = 1;
+
+// button.addEventListener("click", onclick, { once: true }); // один раз работет
+button.addEventListener("click", onclick);
+function onclick(event) {
+  //   console.log(event);
+  //   console.dir(event.currentTarget);
+  //   button.textContent = "World";
+  value += 1;
+  console.dir(item.style.fontSize);
+  item.style.fontSize = value * 10 + "px";
+  item.classList.toggle("invalid");
+}
+console.log(button);
+
+const input = document.querySelector(".input");
+input.addEventListener("input", handlerInput);
+
+function handlerInput(evt) {
+  console.dir(evt.currentTarget.value);
+}

@@ -24,4 +24,8 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+.item {
+  font-size: 10px;
 }/*# sourceMappingURL=main.css.map */
