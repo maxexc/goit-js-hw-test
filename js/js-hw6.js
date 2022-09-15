@@ -59,7 +59,35 @@ magicBtn.addEventListener("click", () => {
   const inputEl = document.querySelector(".js-input");
   console.log(inputEl.value);
   //   inputEl.value = "wertr";
+
+  //   navEl.classList.add("super-cool", "qweqwe"); // add class
+  //   navEl.classList.remove("super-cool", "qweqwe"); // delete class
 });
+
+const navEl = document.querySelector(".site-nav");
+console.log(navEl.classList);
+
+// magicBtn.addEventListener("click", () => {
+//     navEl.classList.add("super-cool", "qweqwe"); // add class
+//     navEl.classList.remove("super-cool", "qweqwe"); // delete class
+//     navEl.classList.replace("super-cool", "qwerty"); //  class super-cool =>qwerty
+
+// });
+magicBtn.addEventListener("click", () => {
+  navEl.classList.toggle("qwerty"); // add/remove class
+  console.log("qwerty exist?", navEl.classList.contains("qwerty"));
+});
+// поиск атрибута
+
+const currentPageUrl = "/portfolio";
+// const currentPageUrl = "/contact";
+
+const linkEl = document.querySelector(
+  `.site-nav__link[href="${currentPageUrl}"]`
+);
+console.log(linkEl);
+linkEl.classList.add("site-nav__link--current");
+
 // //
 
 //
