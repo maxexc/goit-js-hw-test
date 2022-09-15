@@ -55,7 +55,20 @@ console.log(actions[1].dataset.action);
 
 console.log(actions[1].getAttribute("data-action"));
 
+magicBtn.addEventListener("click", () => {
+  const inputEl = document.querySelector(".js-input");
+  console.log(inputEl.value);
+  //   inputEl.value = "wertr";
+});
 // //
+
+//
+
+//
+
+//
+
+//
 const button = document.querySelector(".hello");
 const item = document.querySelector(".item");
 let value = 1;
