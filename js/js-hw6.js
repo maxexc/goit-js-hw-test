@@ -10,15 +10,17 @@ const magicBtn = document.querySelector(".js-magic-btn");
 // const navEl = document.querySelector("ul");
 // console.dir(navEl);
 
-// const navItemEl = document.querySelector("li");
-const navItemEl = document.querySelector(".site-nav__item"); // id=132 ("#132");
-console.log(navItemEl);
+magicBtn.addEventListener("click", () => {
+  // const navItemEl = document.querySelector("li");
+  const navItemEl = document.querySelector(".site-nav__item"); // id=132 ("#132");
+  console.log(navItemEl);
 
-// const navLinksEl = document.querySelector(".site-nav__link3232");  // null
-const navLinksEl = document.querySelectorAll(".site-nav__link");
-// const navLinksEl = document.querySelectorAll(".site-nav .site-nav__link");
-// const navLinksEl = document.querySelectorAll(".site-nav__link121"); // []
-console.log("navLinksEl", navLinksEl);
+  // const navLinksEl = document.querySelector(".site-nav__link3232");  // null
+  const navLinksEl = document.querySelectorAll(".site-nav__link");
+  // const navLinksEl = document.querySelectorAll(".site-nav .site-nav__link");
+  // const navLinksEl = document.querySelectorAll(".site-nav__link121"); // []
+  console.log("navLinksEl", navLinksEl);
+});
 
 // magicBtn.addEventListener("click", () => {});
 
