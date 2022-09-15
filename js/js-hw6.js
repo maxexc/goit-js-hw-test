@@ -30,5 +30,20 @@ magicBtn.addEventListener("click", () => {
   console.log(imageEl.src);
   imageEl.src =
     "https://images.pexels.com/photos/1870376/pexels-photo-1870376.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=480";
+  imageEl.alt = "This new kat";
 });
+
+const heroTitleEl = document.querySelector(".hero__title");
+console.log("heroTitleEl", heroTitleEl);
+console.log(heroTitleEl.textContent);
+// heroTitleEl.textContent = "I`m sweet Kitty";
+
+const imageEl = document.querySelector(".hero__image");
+// console.log(imageEl);
+console.log(imageEl.getAttribute("src")); // любой атрибут можно прочитать/изменить
+console.log(imageEl.src);
+
+// imageEl.removeAttribute("src");
+console.log("imageEl.hasAttribute_src:", imageEl.hasAttribute("src"));
+console.log("imageEl.hasAttribute_src5454:", imageEl.hasAttribute("src5454"));
 // //
