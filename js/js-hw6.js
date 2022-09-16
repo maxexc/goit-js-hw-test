@@ -148,6 +148,51 @@ function onSubmit(evt) {
 //   document.addEventListener("keyup", onBoard);
 // }
 
+// const navEl = document.querySelector(".site-nav"); // UP
 // const firstNavItemEl = navEl.querySelector(".site-nav__item");
 const firstNavItemEl = navEl.firstElementChild; // the same
 console.log(firstNavItemEl);
+
+console.log(navEl.children);
+console.log(navEl.children[1]);
+
+//
+
+const titleEl = document.createElement("h1");
+titleEl.classList.add("page-title");
+titleEl.textContent = "Это заголовок страницы :)";
+console.log(titleEl);
+
+document.body.appendChild(titleEl);
+// console.log(document.body);
+
+const image2El = document.createElement("img");
+image2El.src =
+  "https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_1280.jpg";
+image2El.alt = "alpine-mountains";
+
+// image2El.setAttribute("width", 640);
+image2El.width = 640;
+console.log(image2El.width);
+console.log(image2El);
+
+document.body.appendChild(image2El);
+
+const navItemEl = document.createElement("li");
+navItemEl.classList.add("site-nav__item");
+
+const navLinkEl = document.createElement("a");
+navLinkEl.classList.add("site-nav__link");
+navLinkEl.textContent = "Личный кабинет";
+navLinkEl.href = "/profile";
+
+console.log(navLinkEl);
+
+navItemEl.appendChild(navLinkEl); // a in=> li
+console.log(navItemEl);
+
+navEl.appendChild(navItemEl); // li in=> ul
+// navEl.insertBefore(navItemEl, navEl.firstElementChild);
+// navEl.insertBefore(navItemEl, navEl.lastElementChild);
+// navEl.insertBefore(navItemEl, navEl.children[1]);
+console.log(navEl);
