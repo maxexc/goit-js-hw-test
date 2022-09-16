@@ -196,3 +196,115 @@ navEl.appendChild(navItemEl); // li in=> ul
 // navEl.insertBefore(navItemEl, navEl.lastElementChild);
 // navEl.insertBefore(navItemEl, navEl.children[1]);
 console.log(navEl);
+
+const heroEl = document.querySelector(".hero");
+// heroEl.appendChild(titleEl);
+// heroEl.appendChild(image2El); // or
+
+heroEl.append(titleEl, image2El);
+
+// collections
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "grey", color: "#607D8B" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+const colorPickerContainerEl = document.querySelector(".js-color-picker");
+
+// NEW NEW NEW
+// const elements = colorPickerOptions.map((option) => {
+//   const buttonEl = document.createElement("button");
+//   buttonEl.type = "button";
+//   buttonEl.classList.add("color-picker__option");
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+//   // buttonEl.style.width = 40;
+
+//   return buttonEl;
+// });
+
+// OLD OLD OLD
+// const elements = [];
+
+// for (let i = 0; i < colorPickerOptions.length; i += 1) {
+//   const option = colorPickerOptions[i];
+
+//   const buttonEl = document.createElement("button");
+//   buttonEl.type = "button";
+//   buttonEl.classList.add("color-picker__option");
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+//   // buttonEl.style.width = 40;
+
+//   elements.push(buttonEl);
+// }
+// console.log(elements);
+
+// function
+
+const makeColorPickerOptions = (options) => {
+  // const els = options.map((option) => {
+  //   const buttonEl = document.createElement("button");
+  //   buttonEl.type = "button";
+  //   buttonEl.classList.add("color-picker__option");
+  //   buttonEl.textContent = option.label;
+  //   buttonEl.style.backgroundColor = option.color;
+  //   // buttonEl.style.width = 40;
+
+  //   return buttonEl;
+  // });
+  // return els;
+
+  return options.map((option) => {
+    const buttonEl = document.createElement("button");
+    buttonEl.type = "button";
+    buttonEl.classList.add("color-picker__option");
+    buttonEl.textContent = option.label;
+    buttonEl.style.backgroundColor = option.color;
+    // buttonEl.style.width = 40;
+
+    return buttonEl;
+  });
+};
+
+const elements = makeColorPickerOptions(colorPickerOptions);
+console.log(elements);
+colorPickerContainerEl.append(...elements);
+
+// создаем карточку продукта
+
+const product = {
+  name: "Сервоприводы",
+  descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  price: 2000,
+  available: true,
+  onSale: true,
+};
+
+{
+  /* <article class="product">
+  <h2 class="product__name">Название</h2>
+  <p class="product__descr">Описание</p>
+  <p poduct__pridict>Цена</p>
+</article> */
+}
+
+const productEl = document.createElement("article");
+productEl.classList.add("product");
+
+const nameEl = document.createElement("h2");
+nameEl.classList.add("product__name");
+nameEl.textContent = product.name;
+
+const descrEl = document.createElement("p");
+descrEl.textContent = product.descrption;
+descrEl.classList.add("product__descr");
+
+console.log(productEl);
+console.log(nameEl);
+console.log(descrEl);
