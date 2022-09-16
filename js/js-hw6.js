@@ -147,3 +147,7 @@ function onSubmit(evt) {
 //   document.body.insertAdjacentHTML("beforeend", '<div class="box"></div>');
 //   document.addEventListener("keyup", onBoard);
 // }
+
+// const firstNavItemEl = navEl.querySelector(".site-nav__item");
+const firstNavItemEl = navEl.firstElementChild; // the same
+console.log(firstNavItemEl);
