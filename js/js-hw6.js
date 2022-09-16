@@ -290,7 +290,7 @@ const product = {
   /* <article class="product">
   <h2 class="product__name">Название</h2>
   <p class="product__descr">Описание</p>
-  <p poduct__pridict>Цена</p>
+  <p poduct__pridict>Цена: кредитов</p>
 </article> */
 }
 
@@ -305,6 +305,15 @@ const descrEl = document.createElement("p");
 descrEl.textContent = product.descrption;
 descrEl.classList.add("product__descr");
 
+const priceEl = document.createElement("p");
+priceEl.textContent = `Цена: ${product.price} кредитов`;
+priceEl.classList.add("product__price");
+
 console.log(productEl);
 console.log(nameEl);
 console.log(descrEl);
+console.log(priceEl);
+
+productEl.append(nameEl, descrEl, priceEl);
+
+console.log(productEl);
