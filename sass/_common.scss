@@ -102,3 +102,22 @@ html {
   outline: none;
   cursor: pointer;
 }
+
+.titleEl2__link {
+  margin: 20px 10px;
+  // color: lightgreen;
+}
+
+// .transaction-table {
+// }
+table caption {
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+}
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #2a2a2a;
+}

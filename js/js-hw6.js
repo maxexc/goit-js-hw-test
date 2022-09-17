@@ -372,3 +372,80 @@ const elementsProducts = products.map(makeProductCard);
 console.log(elementsProducts);
 
 productsContainerEl.append(...elementsProducts);
+
+//
+const titleEl2 = document.querySelector(".titleH2");
+console.log(titleEl2.textContent);
+console.log(titleEl2.innerHTML);
+// titleEl2.innerHTML = "qweqwe";
+// titleEl2.innerHTML = '<a href="">Это ссылка)</a>';
+// titleEl2.innerHTML += '<a href="">Это ссылка)</a>'; // перегружает браузер!
+// titleEl2.innerHTML = ""; // clean all
+
+titleEl2.insertAdjacentHTML("beforebegin", '<a href="">Это ссылка)</a>');
+titleEl2.insertAdjacentHTML("afterend", '<a href="">Это ссылка)</a>');
+titleEl2.insertAdjacentHTML(
+  "afterbegin",
+  '<a href="" class="titleEl2__link">Это ссылка)</a>'
+);
+titleEl2.insertAdjacentHTML("beforeend", '<a href="">Это ссылка)</a>');
+
+//
+// table of transactions
+
+import transactionHistory from "./data/transactions.js";
+console.log(transactionHistory);
+
+{
+  /* <tr>
+  <td>ID транзакции</td>
+  <td>Сумма</td>
+  <td>Дата</td>
+  <td>Кто</td>
+  <td>Тип транзакций</td>
+  <td>Имя счёта</td>
+  <td>Номер счёта</td>
+</tr>; */
+}
+
+// const makeTransactionTableRowMarkup = (transaction) => {
+//   console.log(transaction);
+
+//   return `
+//   <tr>
+//     <td>${transaction.id}</td>
+//     <td>${transaction.amount}</td>
+//     <td>${transaction.date}</td>
+//     <td>${transaction.business}</td>
+//     <td>${transaction.type}</td>
+//     <td>${transaction.name}</td>
+//     <td>${transaction.account}</td>
+//   </tr>
+//   `;
+// };
+
+const makeTransactionTableRowMarkup = (transaction) => {
+  const { id, amount, date, business, type, name, account } = transaction;
+  console.log(transaction);
+
+  return `
+  <tr>
+    <td>${transaction.id}</td>
+    <td>${transaction.amount}</td>
+    <td>${transaction.date}</td>
+    <td>${transaction.business}</td>
+    <td>${transaction.type}</td>
+    <td>${transaction.name}</td>
+    <td>${transaction.account}</td>
+  </tr>
+  `;
+};
+console.log(makeTransactionTableRowMarkup(transactionHistory[0]));
+const tableEl = document.querySelector(".js-transaction-table");
+
+const makeTransactionTableRows = transactionHistory
+  .map(makeTransactionTableRowMarkup)
+  .join("");
+
+tableEl.insertAdjacentHTML("beforeend", makeTransactionTableRows);
+console.log(makeTransactionTableRows);
