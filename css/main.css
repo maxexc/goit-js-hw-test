@@ -108,4 +108,24 @@ table td {
 .hero {
   display: block;
   width: 420px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form input {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+}
+
+.register-form button {
+  padding: 12px;
+}
+
+.inputValue {
+  overflow-wrap: anywhere;
 }/*# sourceMappingURL=main.css.map */
