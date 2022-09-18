@@ -103,4 +103,9 @@ table th,
 table td {
   padding: 10px;
   border: 1px solid #2a2a2a;
+}
+
+.hero {
+  display: block;
+  width: 420px;
 }/*# sourceMappingURL=main.css.map */
