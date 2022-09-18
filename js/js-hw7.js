@@ -20,3 +20,24 @@ removeListenerBtn.addEventListener(
   },
   { once: true }
 );
+
+const mango = {
+  username: "Mango",
+  showUsername() {
+    console.group(`${this.username} info:`);
+    console.log(this);
+    console.log(`My username is: ${this.username}`);
+    console.groupEnd();
+  },
+};
+
+const btnCheck = document.querySelector('[data-action="edit"]');
+
+// ✅ Работает
+// mango.showUsername();
+
+// ❌ this будет ссылаться на button если использовать showUsername как callback
+// btn.addEventListener("click", mango.showUsername); // не работает
+
+// ✅ Не забывайте привязывать контекст методов объекта
+btnCheck.addEventListener("click", mango.showUsername.bind(mango));
