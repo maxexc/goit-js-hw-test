@@ -97,3 +97,31 @@ child.addEventListener("click", () => {
 descendant.addEventListener("click", () => {
   alert("Descendant click handler");
 });
+
+// click
+const boxRef = document.querySelector(".js-box");
+const colorTextRef = document.querySelector(".js-inner-box");
+boxRef.addEventListener("mouseenter", onMouseEnter);
+// boxRef.addEventListener("mouseover", onMouseEnter);
+boxRef.addEventListener("mouseleave", onMouseLeave);
+// boxRef.addEventListener("mouseenter", onMouseMove); // coordinats mouse
+colorTextRef.addEventListener("click", mouseChangeColor);
+
+function onMouseEnter(event) {
+  const box = event.currentTarget;
+  box.classList.add("box--active");
+}
+
+function onMouseLeave(event) {
+  const box = event.currentTarget;
+  box.classList.remove("box--active");
+  colorTextRef.style.color = "#90ee90";
+}
+
+function onMouseMove(event) {
+  console.log(event);
+}
+
+function mouseChangeColor(event) {
+  colorTextRef.style.color = "#ff0000";
+}
