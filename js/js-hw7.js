@@ -125,3 +125,22 @@ function onMouseMove(event) {
 function mouseChangeColor(event) {
   colorTextRef.style.color = "#ff0000";
 }
+
+// События focus & blur, input & change, checkbox properties
+
+const input = document.querySelector(".js-input");
+const nameLabel = document.querySelector(".js-button > span");
+const license = document.querySelector(".js-license");
+const btn = document.querySelector(".js-button");
+
+function onInputFocus() {
+  console.log("Инпут получил фокус - событие focus");
+}
+
+function onInputBlur() {
+  console.log("Инпут получил фокус - событие blur");
+}
+
+function omInputChange() {}
+
+function onLicenseInput() {}
