@@ -168,3 +168,30 @@ function onLicenseChange(event) {
 
   refs.btn.disabled = !event.currentTarget.checked;
 }
+
+function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(2, 4));
+
+function createPhoneNumber(numbers) {
+  let format = "(xxx) xxx-xxxx";
+
+  for (let i = 0; i < numbers.length; i++) {
+    format = format.replace("x", numbers[i]);
+  }
+
+  return format;
+}
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+function getSum(a, b) {
+  let sum = null;
+  if (a === b) {
+    sum = a;
+  }
+  sum = a + b;
+  return sum;
+}
+console.log(getSum(-1, 2));
